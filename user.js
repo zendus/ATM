@@ -2,7 +2,7 @@ const inquirer = require("inquirer");
 const classExport = require('./classExport');
 const account = require("./account");
 const global = require("./global");
-const ATM = require("./ATM");
+const ATM = require(".");
 
 function savings() {
     return userServices();
@@ -119,11 +119,10 @@ function user() {
                 }
 
                 return 'Please enter a valid Pass key!';
-
             }
         }
     ).then(answer => {
-        userAccount();
+        return userAccount();
     });
 
 }
